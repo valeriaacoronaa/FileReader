@@ -46,6 +46,10 @@ int main()
 
    cout << "Analyze another file (y/n)? ";
    cin  >> answer;  
+   if(answer!='y' || answer != 'Y')
+   {
+   return 0;
+   }
 
   while(answer != 'n' || answer != 'N')
   {
