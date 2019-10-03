@@ -50,14 +50,14 @@ int main()
    
   while(answer == 'y' || answer == 'Y')
   {
-  cout<< " What file do you want to open? ";
-  cin >> fileName;
-
+    cout<<"What file do you want to open? ";
+    cin >> fileName;
+  //STEP 1: open the fileStream for input, using the fileName specified
   fileStream.open(fileName.c_str(), ios::in);
   if( /*STEP 2: check to see if the fileStream successfully opened*/fileStream.is_open())
   {
-   // cout<<fileName<<" opened.\nFILE CONTENTS:\n";
-    cout<<"FILE CONTENTS:\n";
+    cout<<fileName<<" opened.\nFILE CONTENTS:\n";
+
     //STEP 3: repeat the following until the end-of-file (eof) has been reached...
 
     while(!fileStream.eof())
@@ -74,7 +74,7 @@ int main()
     // 3B: display the line, followed by an endline
 
     //STEP 4: close the fileStream
-  }  
+  }
   else
   {
     cout<<fileName<<" could not be opened.\n";
@@ -82,9 +82,8 @@ int main()
 
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
-   cout << "Analyze another file(y/n)? ";
+   cout << "Analyze another file(y/n)?";
    cin  >> answer;
-
    }
 
    fileStream.close();
