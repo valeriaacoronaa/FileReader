@@ -44,10 +44,9 @@ int main()
 
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
-   cout << "Analyze another file (y/n)?";
+   cout << "Analyze another file (y/n)? ";
    cin  >> answer;
-   
-  do
+   while(answer == 'y' || answer == 'Y');    
   {
     string fileName;
     cout<<" What file do you want to open? ";
@@ -77,8 +76,7 @@ int main()
 
    cout << "Analyze another file (y/n)?\n";
    cin  >> answer;
-   }while(answer == 'y' || answer == 'Y');   
-
+   }
    fileStream.close();
    filestream.close();
 
