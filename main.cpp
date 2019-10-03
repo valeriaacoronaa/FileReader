@@ -41,7 +41,7 @@ int main()
 
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
-   cout << "Analyze another file(y/n)?";
+   cout << "Analyze another file (y/n)?";
    cin  >> answer;
    
   while(answer == 'y' || answer == 'Y')
