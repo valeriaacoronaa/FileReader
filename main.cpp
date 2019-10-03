@@ -12,7 +12,9 @@ int main()
   int numberOflines=0;
   int numberOfcharacters=0;
   char answer=' ';
-  cout<<"What file do you want to open?";
+  string fileName2;
+
+  cout<<"What file do you want to open? ";
   getline(cin, fileName);
   
   //STEP 1: open the fileStream for input, using the fileName specified
@@ -46,12 +48,12 @@ int main()
    
   while(answer == 'y' || answer == 'Y')
   {
-    cout<<"What file do you want to open? ";
-    cin >> fileName;
-  fileStream.open(fileName.c_str(), ios::in);
+    cout<<" What file do you want to open? ";
+    cin >> fileName2;
+  fileStream.open(fileName2.c_str(), ios::in);
   if( /*STEP 2: check to see if the fileStream successfully opened*/fileStream.is_open())
   {
-    cout<<fileName<<" opened.\nFILE CONTENTS:\n";
+    cout<<fileName2<<" opened.\nFILE CONTENTS:\n";
 
 
     while(!fileStream.eof())
@@ -67,12 +69,12 @@ int main()
   }
   else
   {
-    cout<<fileName<<" could not be opened.\n";
+    cout<<fileName2<<" could not be opened.\n";
   }
 
-   cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
+   cout << "METADATA\n" << "File: " << fileName2 << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
-   cout << "Analyze another file(y/n)?";
+   cout << "Analyze another file (y/n)?";
    cin  >> answer;
    }
 
