@@ -35,22 +35,14 @@ int main()
         numberOfcharacters= line.length()+numberOfcharacters;
         }
     }
-  
-  }
-  else
-  {
-    cout<<fileName<<" could not be opened.\n";
-  }
-
-   cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
+  cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
    cout << "Analyze another file (y/n)? ";
-   cin  >> answer;  
+   cin  >> answer;
    if(answer!='y' || answer != 'Y')
    {
    return 0;
    }
-
   while(answer != 'n' || answer != 'N')
   {
     cout << "What file do you want to open? ";
@@ -76,7 +68,7 @@ int main()
          {
              cout<<fileName<<" could not be opened.\n";
          }
-         
+
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << lines << "\n" << "Characters: " << characters << "\n";
 
    cout << "Analyze another file (y/n)?\n";
@@ -85,8 +77,51 @@ int main()
    {
         return 0;
    }
-
   }
+  }else
+  {
+    cout<<fileName<<" could not be opened.\n";
+    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
+
+   cout << "Analyze another file (y/n)? ";
+   cin  >> answer;
+     while(answer != 'n' || answer != 'N')
+  {
+    cout << "What file do you want to open? ";
+    cin >> fileName;
+
+  filestream.open(fileName.c_str(), ios::in);
+    if( filestream.is_open())
+     {
+         cout<<fileName<<" opened.\nFILE CONTENTS:\n";
+
+
+          while(!filestream.eof())
+          {
+             getline(filestream, line);
+             if(!line.empty())
+             {
+                 cout << line << endl;
+                 lines+=1;
+                 characters= line.length()+characters;
+              }
+            }
+       } else
+         {
+             cout<<fileName<<" could not be opened.\n";
+         }
+
+   cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << lines << "\n" << "Characters: " << characters << "\n";
+
+   cout << "Analyze another file (y/n)?\n";
+   cin  >> answer;
+   if(answer!='y' || answer != 'Y')
+   {
+   return 0;
+   }
+  }
+  }
+
    fileStream.close();
    filestream.close();
 
