@@ -12,9 +12,9 @@ int main()
   fstream filestream;
   int numberOflines=0;
   int numberOfcharacters=0;
-  char answer=' ';
   int lines=0;
   int characters=0;
+  char answer= ' ';
 
   cout<<"What file do you want to open? ";
   getline(cin, fileName);
@@ -39,10 +39,6 @@ int main()
 
    cout << "Analyze another file (y/n)? ";
    cin  >> answer;
-   if(answer!='y' || answer != 'Y')
-   {
-   return 0;
-   }
   while(answer != 'n' || answer != 'N')
   {
     cout << "What file do you want to open? ";
