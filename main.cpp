@@ -49,7 +49,7 @@ int main()
 
   while(answer != 'n' || answer != 'N')
   {
-    cout << "What file do you want to open?";
+    cout << "What file do you want to open? ";
     cin >> fileName;
 
   filestream.open(fileName.c_str(), ios::in);
