@@ -30,7 +30,7 @@ int main()
         {
         cout << line << endl;
         numberOflines+=1; 
-        numberOfcharacters= line.length();
+        numberOfcharacters= line.length()+numberOfcharacters;
         }
     }
     // 3A: read a line from fileStream into the variable line
@@ -45,12 +45,12 @@ int main()
 
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
-   cout << "Analyze another file(y/n)?\n";
+   cout << "Analyze another file(y/n)?";
    cin  >> answer;
    
   while(answer == 'y' || answer == 'Y')
   {
-  cout<<"What file do you want to open? ";
+  cout<< " What file do you want to open? ";
   cin >> fileName;
 
   fileStream.open(fileName.c_str(), ios::in);
@@ -67,7 +67,7 @@ int main()
         {
         cout << line << endl;
         numberOflines+=1;
-        numberOfcharacters= line.length();
+        numberOfcharacters= line.length()+numberOfcharacters;
         }
     }
     // 3A: read a line from fileStream into the variable line
@@ -82,7 +82,7 @@ int main()
 
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
-   cout << "Analyze another file(y/n)?\n";
+   cout << "Analyze another file(y/n)? ";
    cin  >> answer;
 
    }
