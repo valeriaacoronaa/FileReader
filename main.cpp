@@ -45,11 +45,11 @@ int main()
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << numberOflines << "\n" << "Characters: " << numberOfcharacters << "\n";
 
    cout << "Analyze another file (y/n)? ";
-   cin  >> answer;
+   cin  >> answer;  
+
    while(answer == 'y' || answer == 'Y');    
   {
     string fileName;
-    cout<<" What file do you want to open? ";
     cin >> fileName;
   filestream.open(fileName.c_str(), ios::in);
     if( filestream.is_open())
@@ -71,7 +71,7 @@ int main()
          {
              cout<<fileName<<" could not be opened.\n";
          }
-
+   
    cout << "METADATA\n" << "File: " << fileName << "\n" <<"Lines: " << lines << "\n" << "Characters: " << characters << "\n";
 
    cout << "Analyze another file (y/n)?\n";
