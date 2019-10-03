@@ -57,7 +57,7 @@ int main()
   if( /*STEP 2: check to see if the fileStream successfully opened*/fileStream.is_open())
   {
    // cout<<fileName<<" opened.\nFILE CONTENTS:\n";
-
+    cout<<"FILE CONTENTS:\n";
     //STEP 3: repeat the following until the end-of-file (eof) has been reached...
 
     while(!fileStream.eof())
